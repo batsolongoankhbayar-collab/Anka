@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>World Stars Penalty</title>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#0b6623;
+color:white;
+}
+button{
+padding:15px;
+margin:10px;
+font-size:20px;
+cursor:pointer;
+}
+#result{
+font-size:25px;
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<h1>⚽ World Stars Penalty ⚽</h1>
+
+<h2>Wins: <span id="wins">0</span></h2>
+
+<p>Хаашаа цохих вэ?</p>
+
+<button onclick="shoot('Left')">⬅ Left</button>
+<button onclick="shoot('Center')">⬆ Center</button>
+<button onclick="shoot('Right')">➡ Right</button>
+
+<div id="result"></div>
+
+<script>
+
+let wins = 0;
+
+const poorPlayers = [
+"Ferran Torres",
+"Mason Mount",
+"Conor Gallagher"
+];
+
+const proPlayers = [
+"Pedri",
+"Musiala",
+"Saka"
+];
+
+const goldPlayers = [
+"Mbappe",
+"Haaland",
+"Vinicius Jr"
+];
+
+function shoot(direction){
+
+const choices = ["Left","Center","Right"];
+const keeper = choices[Math.floor(Math.random()*3)];
+
+if(direction === keeper){
+document.getElementById("result").innerHTML =
+"🧤 Хаалгач хаалаа!";
+}
+else{
+wins++;
+document.getElementById("wins").innerHTML = wins;
+
+document.getElementById("result").innerHTML =
+"🥅 GOOOOAL!";
+
+rewardCheck();
+}
+
+}
+
+function rewardCheck(){
+
+if(wins === 5){
+let player =
+poorPlayers[Math.floor(Math.random()*poorPlayers.length)];
+
+alert("🥉 POOR PACK!\nЧи авлаа: " + player);
+}
+
+if(wins === 20){
+let player =
+proPlayers[Math.floor(Math.random()*proPlayers.length)];
+
+alert("🥈 PRO PACK!\nЧи авлаа: " + player);
+}
+
+if(wins === 50){
+let player =
+goldPlayers[Math.floor(Math.random()*goldPlayers.length)];
+
+alert("🥇 GOLD PACK!\nЧи авлаа: " + player);
+}
+
+}
+
+</script>
+
+</body>
+</html>

@@ -12,11 +12,11 @@ const result =
 document.getElementById("result");
 
 ball.style.left = "50%";
-ball.style.bottom = "140px";
+ball.style.bottom = "160px";
 
 keeper.style.left = "50%";
 
-let saveDirection =
+const saveDirection =
 ["left","center","right"]
 [Math.floor(Math.random()*3)];
 
@@ -32,7 +32,7 @@ if(direction==="right"){
 ball.style.left="65%";
 }
 
-ball.style.top="80px";
+ball.style.top="130px";
 
 if(saveDirection==="left"){
 keeper.style.left="35%";
@@ -51,10 +51,9 @@ setTimeout(()=>{
 if(direction===saveDirection){
 
 result.innerHTML =
-"🧤 SAVED";
+"🧤 SAVED!";
 
 }
-
 else{
 
 wins++;
@@ -63,13 +62,13 @@ document.getElementById("wins")
 .innerHTML = wins;
 
 result.innerHTML =
-"⚽ GOOOOAL";
+"⚽ GOOOOAL!";
 
 }
 
 ball.style.top="";
 
-ball.style.bottom="140px";
+ball.style.bottom="160px";
 
 },1000);
 

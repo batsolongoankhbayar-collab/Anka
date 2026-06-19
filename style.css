@@ -1,31 +1,48 @@
 body{
 margin:0;
-font-family:Arial;
+background:#0d0d0d;
+font-family:Arial,sans-serif;
 text-align:center;
 color:white;
-background:#0b0b0b;
 }
 
-h1{
+.title{
 margin-top:15px;
+font-size:42px;
 }
 
-#field{
+#stadium{
 width:1000px;
 height:650px;
-margin:auto;
-margin-top:20px;
+margin:20px auto;
 position:relative;
 overflow:hidden;
-border:4px solid white;
 border-radius:20px;
+border:4px solid white;
 
 background:
 linear-gradient(
 to bottom,
-#43a047 0%,
+#4caf50 0%,
 #388e3c 50%,
 #2e7d32 100%
+);
+}
+
+#crowd{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:80px;
+
+background:
+repeating-linear-gradient(
+90deg,
+#222 0px,
+#222 10px,
+#444 10px,
+#444 20px
 );
 }
 
@@ -35,21 +52,20 @@ height:120px;
 
 position:absolute;
 
-top:20px;
+top:80px;
 left:50%;
 
 transform:translateX(-50%);
 
 border:8px solid white;
-border-top-width:12px;
 
 background:
 repeating-linear-gradient(
 90deg,
-rgba(255,255,255,.2),
-rgba(255,255,255,.2) 8px,
-transparent 8px,
-transparent 16px
+rgba(255,255,255,.25),
+rgba(255,255,255,.25) 10px,
+transparent 10px,
+transparent 20px
 );
 }
 
@@ -59,14 +75,14 @@ height:90px;
 
 background:#ff5252;
 
-border-radius:20px;
-
 position:absolute;
 
-top:120px;
+top:170px;
 left:50%;
 
 transform:translateX(-50%);
+
+border-radius:20px;
 
 transition:.5s;
 }
@@ -81,55 +97,62 @@ border-radius:50%;
 
 position:absolute;
 
-bottom:150px;
+bottom:160px;
 left:50%;
 
 transform:translateX(-50%);
 
+box-shadow:0 0 20px white;
+
 transition:1s;
-box-shadow:0 0 15px white;
 }
 
 #player{
 width:100px;
-height:140px;
+height:150px;
 
 background:#2196f3;
 
-border-radius:15px;
-
 position:absolute;
 
-bottom:10px;
+bottom:20px;
 left:50%;
 
 transform:translateX(-50%);
+
+border-radius:15px;
 }
 
 #controls{
-margin-top:15px;
+margin-top:10px;
 }
 
 button{
 padding:15px 30px;
-margin:8px;
+margin:10px;
 font-size:20px;
-cursor:pointer;
-border:none;
-border-radius:12px;
 font-weight:bold;
+cursor:pointer;
+
+border:none;
+border-radius:10px;
 }
 
 button:hover{
 transform:scale(1.05);
 }
 
-#result{
-font-size:40px;
-margin-top:20px;
-font-weight:bold;
+.score{
+font-size:30px;
+margin-top:10px;
 }
 
 #wins{
 color:gold;
+}
+
+#result{
+font-size:36px;
+margin-top:20px;
+font-weight:bold;
 }
